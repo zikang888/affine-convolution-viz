@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'IBM Plex Mono', monospace;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  #root {
+    height: 100vh;
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    background: #30363d;
+    border-radius: 2px;
+    outline: none;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #58a6ff;
+    cursor: pointer;
+    border: 2px solid #0d1117;
+    transition: transform 0.15s ease;
+  }
+
+  input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .canvas-container {
+    @apply relative rounded-lg overflow-hidden;
+    border: 1px solid #21262d;
+    background: #161b22;
+  }
+
+  .panel-card {
+    @apply rounded-lg p-4;
+    background: #161b22;
+    border: 1px solid #21262d;
+  }
+
+  .slider-label {
+    font-family: 'IBM Plex Serif', serif;
+    @apply text-xs font-medium;
+    color: #8b949e;
+  }
+
+  .matrix-cell {
+    @apply w-16 h-10 text-center text-sm rounded;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    font-family: 'IBM Plex Mono', monospace;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .matrix-cell:focus {
+    outline: none;
+    border-color: #58a6ff;
+    box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+  }
+
+  .preset-btn {
+    @apply px-3 py-1.5 text-xs rounded-md transition-all duration-150;
+    background: #21262d;
+    border: 1px solid #30363d;
+    color: #8b949e;
+  }
+
+  .preset-btn:hover {
+    background: #30363d;
+    color: #c9d1d9;
+  }
+
+  .preset-btn.active {
+    background: rgba(88, 166, 255, 0.15);
+    border-color: #58a6ff;
+    color: #58a6ff;
+  }
+}
