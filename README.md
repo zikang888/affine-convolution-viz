@@ -10,6 +10,13 @@
 
 - 安装 [Node.js](https://nodejs.org)（18 或以上版本）
 
+### 拉取项目
+
+```bash
+git clone https://github.com/zikang888/affine-convolution-viz.git
+cd affine-convolution-viz
+```
+
 ### 安装与启动
 
 ```bash
